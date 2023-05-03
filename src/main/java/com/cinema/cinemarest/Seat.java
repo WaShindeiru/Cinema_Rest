@@ -11,6 +11,7 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 @Getter
+@Setter
 public class Seat {
 
     @Id
