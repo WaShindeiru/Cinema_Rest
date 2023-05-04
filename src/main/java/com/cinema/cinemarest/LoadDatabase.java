@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class LoadDatabase {
 
     @Bean
-    CommandLineRunner init(SeatRepository seatRepository, MovieRepository movieRepository){
+    CommandLineRunner init(SeatRepository seatRepository, MovieRepository movieRepository, HallRepository hallRepository){
         return args -> {
             for(int i=0; i<11; i++){
                 seatRepository.save(new Seat(i, 1, "lorem", "ipsum", 0));
@@ -22,6 +22,10 @@ public class LoadDatabase {
             movieRepository.save(new Movie(1, "One Day", 1));
             movieRepository.save(new Movie(2, "Career Opportunities", 2));
             movieRepository.save(new Movie(3, "V for vandetta", 1));
+
+            hallRepository.save(new Hall(1, "Small", 10));
+            hallRepository.save(new Hall(2, "Medium", 20));
+            hallRepository.save(new Hall(3, "Big", 40));
         };
     }
 }

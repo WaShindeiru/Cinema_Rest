@@ -18,6 +18,7 @@ public class MovieAssembler implements RepresentationModelAssembler<Movie, Movie
         temp.add(linkTo(methodOn(MovieController.class).One(entity.getMovieId())).withSelfRel());
         temp.add(linkTo(methodOn(MovieController.class).getAll()).withRel("AllMovies"));
         temp.add(linkTo(methodOn(SeatController.class).getByMovieId(temp.getMovieId())).withRel("MovieSeats"));
+        temp.add(linkTo(methodOn(HallController.class).One(entity.getHallId())).withRel("Hall"));
 
         return temp;
     }

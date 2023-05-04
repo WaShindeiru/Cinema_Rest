@@ -16,6 +16,7 @@ class RootController {
         RepresentationModel<?> temp = new RepresentationModel<>();
         temp.add(linkTo(SeatController.class).withRel("SeatController"));
         temp.add(linkTo(MovieController.class).withRel("MovieController"));
+        temp.add(linkTo(HallController.class).withRel("HallController"));
 
         return temp;
     }
